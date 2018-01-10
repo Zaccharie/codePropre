@@ -3,11 +3,11 @@ package ex3;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author ETY19
+/**Représente une zone
+ * @author Zaccharie
  *
  */
-public class Zone {
+public abstract class Zone {
 	
 	protected List<Animal> listAnimaux;
 
@@ -18,15 +18,15 @@ public class Zone {
 		this.listAnimaux = new ArrayList<Animal>();
 	}
 	
-	/**
+	/**Ajoute animal à la liste d'animaux
 	 * @param animal
 	 */
 	public void addAnimalToZone(Animal animal) {
 		listAnimaux.add(animal);
 	}
 	
-	/**
-	 * 
+	/**Affiche la liste des animaux dans la console
+	 * TODO utiliser Logging à la place de syso
 	 */
 	public void afficherListeAnimaux(){
 		for (Animal animal: listAnimaux){ 
@@ -34,9 +34,19 @@ public class Zone {
 		}
 	}
 	
+	
+	/**Renvoie le nombre d'animaux contenu dans la liste d'animaux 
+	 * @return int
+	 */
 	public int compterAnimaux(){
 		return this.listAnimaux.size();
 	}
+	
+	public boolean acceptInZone(Animal animal){
+		return false;
+	}
+	
+	public abstract double calculerKgsNourritureParJour();
 	
 	/**
 	 * @return

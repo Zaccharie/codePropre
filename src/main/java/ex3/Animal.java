@@ -1,13 +1,13 @@
 package ex3;
 
 /**Représente un Animal
- * @author ETY19
+ * @author Zaccharie 
  *
  */
 public class Animal {
 	
 	protected String nom;
-	protected String type;
+	protected TypeAnimal type;
 	protected Comportement comportement;
 	
 	/**
@@ -15,7 +15,7 @@ public class Animal {
 	 * @param type
 	 * @param comportement
 	 */
-	public Animal(String nom, String type, Comportement comportement) {
+	public Animal(String nom, TypeAnimal type, Comportement comportement) {
 		super();
 		this.nom = nom;
 		this.type = type;
@@ -39,14 +39,14 @@ public class Animal {
 	/**
 	 * @return
 	 */
-	public String getType() {
+	public TypeAnimal getType() {
 		return type;
 	}
 
 	/**
 	 * @param type
 	 */
-	public void setType(String type) {
+	public void setType(TypeAnimal type) {
 		this.type = type;
 	}
 
