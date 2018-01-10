@@ -1,30 +1,34 @@
 package ex3;
 
+import ex3.Animal;
+
 public class Zoo {
 
 	private String nom;
-	private SavaneAfricaine savaneAfricaine;
-	private ZoneCarnivore zoneCarnivore;
-	private FermeReptile fermeReptile;
-	private Aquarium aquarium;
+	private Zone savaneAfricaine = new Zone();
+	private Zone zoneCarnivore = new Zone();
+	private Zone fermeReptile = new Zone();
+	private Zone aquarium = new Zone();
 	
 	public Zoo(String nom){
 		this.nom = nom;
 	}
 	
-	public void addAnimal(String nomAnimal, String typeAnimal, String comportement){
-		if (typeAnimal.equals("MAMMIFERE") && comportement.equals("CARNIVORE")){
-			zoneCarnivore.addAnimal(typeAnimal, nomAnimal, comportement);
+	public void addAnimal(Animal animal){
+		
+		if(animal.type.equals("MAMMIFERE") && animal.comportement.equals(Comportement.HERBIVORE)) {
+			savaneAfricaine.addAnimalToZone(animal);
 		}
-		else if (typeAnimal.equals("MAMMIFERE") && comportement.equals("HERBIVORE")){
-			savaneAfricaine.addAnimal(typeAnimal, nomAnimal, comportement);
+		else if (animal.type.equals("MAMMIFERE") && animal.comportement.equals(Comportement.CARNIVORE)){
+			zoneCarnivore.addAnimalToZone(animal);
 		}
-		else if (typeAnimal.equals("REPTILE")){
-			fermeReptile.addAnimal(typeAnimal, nomAnimal, comportement);
+		else if (animal.type.equals("REPTILE")){
+			fermeReptile.addAnimalToZone(animal);
 		}
-		else if (typeAnimal.equals("POISSON")){
-			aquarium.addAnimal(typeAnimal, nomAnimal, comportement);
+		else if (animal.type.equals("POISSON")){
+			aquarium.addAnimalToZone(animal);
 		}
+		
 	}
 	
 	public void afficherListeAnimaux(){
